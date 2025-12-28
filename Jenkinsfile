@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'tuongnm-acer' } // Forces the build to run on your local machine
+    agent { label 'linux' } // Forces the build to run on your local machine
 
     stages {
         stage('Checkout') {
