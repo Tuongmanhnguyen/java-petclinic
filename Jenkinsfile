@@ -27,7 +27,15 @@ pipeline {
             steps {
                 // Using docker-compose ensures the networking we fixed earlier remains intact
                 sh 'docker compose down --remove-orphans'
-                sh 'docker compose up -d'
+                // 1. Start ONLY the database first
+                sh 'docker compose up -d mysql'
+        
+                // 2. Wait for MySQL to initialize (standard for homelabs)
+                echo "Waiting 20 seconds for MySQL to be ready..."
+                sleep 20
+            
+                // 3. Start the application
+                sh 'docker compose up -d app'
             }
         }
     }
