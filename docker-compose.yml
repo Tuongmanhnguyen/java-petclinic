@@ -1,7 +1,7 @@
 services:
   mysql:
     image: mysql:9.5
-    container_name: mysql-db  # Giving it a fixed name makes it easier
+    #container_name: mysql-db  # Giving it a fixed name makes it easier
     ports:
       - "3306:3306"
     environment:

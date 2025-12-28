@@ -26,7 +26,7 @@ pipeline {
         stage('Deploy (Homelab)') {
             steps {
                 // Using docker-compose ensures the networking we fixed earlier remains intact
-                sh 'docker compose down'
+                sh 'docker compose down --remove-orphans'
                 sh 'docker compose up -d'
             }
         }
