@@ -19,7 +19,7 @@ services:
     environment:
       - SPRING_PROFILES_ACTIVE=mysql
       # We use 'mysql-db' here because it matches the container_name above
-      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db:3306/petclinic
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/petclinic
     depends_on:
       - mysql    
   
